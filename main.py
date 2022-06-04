@@ -35,23 +35,30 @@ elif inp == 2:
         print(f"You are logged in successfully {username}")
         user_crawler = True
         while user_crawler:
-            usr_choice = int(input(f"{username}, Enter the option 1.Place new order 2.Order history 3.Exit"))
+            usr_choice = int(input(f"{username}, Enter the option 1.Register New user 2.Place new order 3.Order history 4.Exit 5.Update Profile"))
             if usr_choice == 1:
-                uhh.place_order()
+                uhh.create_user()
+                username = input("Enter the New username here: ")
+                password = input("Enter the New password here: ")
+                if User.login(username, password):
+                    print(f"You are logged in successfully {username}")
             elif usr_choice == 2:
+                uhh.place_order()
+            elif usr_choice == 3:
                 print(f"Here is your order history, {username}")
                 print(uhh.order_history)
-            elif usr_choice == 3:
+            elif usr_choice == 4:
                 user_crawler = False
                 print("You're Successfully looged out")
+            elif usr_choice == 5:
+                uhh.update_profile()
+                username = input("Enter the username here: ")
+                password = input("Enter the password here: ")
+                if User.login(username, password):
+                    print(f"You are logged in successfully {username}")
             else:
                 print("You choose the invalid option")
     else:
         print("These are the wrong credentials! SORRY!!!")
 else:
     exit()
-
-
-
-
-
