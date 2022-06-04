@@ -3,7 +3,7 @@ admin_keys = {"Pavithra": "Pavithra@7297"}
 inven = {1: {'ItemName': 'Pancake', 'ItemID': 1, 'Price': 70, 'Stock': 15,'Discount':5},
         2: {'ItemName': 'Waffle', 'ItemID': 2, 'Price': 100, 'Stock': 20,'Discount':5},
         3: {'ItemName': 'Cake', 'ItemID': 3, 'Price': 80, 'Stock': 5,'Discount':10},
-        4: {'ItemName': 'Icecream', 'ItemID': 4, 'Price': 50, 'Stock': 25,'Discount':0}}
+        4: {'ItemName': 'Icecream', 'ItemID': 4, 'Price': 50, 'Stock': 25,'Discount':10}}
 
 
 def add_new_item():
@@ -40,9 +40,11 @@ def show_inven():
     print("*****MENU FOR BREAD AND BAKES*****")
     for i in inven:
         print("Food Item Name: ",inven[i]["ItemName"])
-        print("Price: ",inven[i]["Price"],"INR")
+        print("Price: ",inven[i]["Price"],"INR per piece")
         print("Food Item ID: ",inven[i]["ItemID"])
         print("Discount: ",inven[i]["Discount"],"INR")
+        print("Item in Stock: ",inven[i]["Stock"],"Pieces")
+        print("\n")
 
 def remove_item():
     d = int(input("Enter the Food Item id which you want to exit"))
