@@ -41,7 +41,7 @@ class User:
                  "Address": address,
                  "Password": pwd
             }
-			print("Registration successfully completed. Redirecting to login...")
+            print("Registration successfully completed. Redirecting to login...")
             return userarray
     
     def update_profile(self):
